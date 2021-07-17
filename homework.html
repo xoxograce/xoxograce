@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌡Weather App</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: #e4f1fe;
+      }
+
+      h1 {
+        color: #1a64d6;
+        margin: 0;
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(239, 246, 249) 0%,
+          rgb(206, 239, 253) 90%
+        );
+      }
+
+      h2 {
+        display: block;
+        font-size: 30px;
+        font-weight: lighter;
+        margin: 0;
+      line-height: 48px;
+      }
+       ul {
+        padding: 0;
+       }
+
+        li {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0px;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+    li:hover {
+        background:#a8e0e1;
+      }
+ 
+ strong {
+      color: #4D4D4D; 
+     
+      }
+      p {
+        color: #4D4D4D;
+        font-family: monospace;
+        font-size: 18px;
+       opacity: 0.7;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        background-color: #1a64d6;
+        box-shadow: 6px 6px 4px #cfd9df;
+        border-color: #1a64d6;
+        border-radius: 27px;
+        border: 1px solid;
+        color: #e4f1fe;
+        transition: all 200ms ease-in-out;
+        font-size: 17px;
+        font: caption;
+        padding: 16px 20px;
+      }
+
+      button:hover {
+        background-color: transparent;
+        border-color: #1a64d6;
+        color: #1a64d6;
+        cursor: pointer;
+      }
+     
+
+      .tall {
+      font-weight: bold;
+      }
+ 
+
+    </style>
+  </head>
+  <body>
+    <h1>
+      ⛅
+      <br />
+      Currently 21°C in Alicante
+      <br />
+    </h1>
+    <br />
+
+    <h2>
+      13° /
+      <span class="tall">23° </span>
+    </h2>
+
+         <li>
+        <h3>
+          🌧Tomorrow
+        </h3>
+        <p>10° / <strong>22°</strong></p>
+      </li>
+      <li>
+        <h3>
+          🌥 Saturday
+        </h3>
+        <p>15° / <strong>17°</strong></p>
+      </li>
+      <li>
+        <h3>
+          ☀️ Sunday
+        </h3>
+        <p>25° / <strong>28°</strong></p>
+      </li>
+    </ul>
+
+    <button>
+      <span class="button"> Change city </span>
+    </button>
+    <br />
+    <br />
+    <br />
+    <p > Coded by Grace Njoki </p>
+    
+    <script>
+      function changeCity() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let heading = document.querySelector("h1");
+        if (temperature < 0) {
+          heading.innerHTML = "😟<br />Currently ${temperature}  °C in  city";
+        } else {
+          heading.innerHTML = "😀<br />Currently ${temperature} °C in city";
+        }
+      }
+      let button = document.querySelector("button");
+      button.addEventListener("click", changeCity);
+    </script>
+  </body>
+</html>
